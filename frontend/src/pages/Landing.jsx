@@ -56,11 +56,16 @@ export default function Landing() {
                 </span>
               </h1>
 
+<<<<<<< HEAD
               <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-ink-2 lg:text-lg">
+=======
+              <p className="mx-auto mt-6 max-w-2xl ext-base leading-7 text-ink-2 lg:text-lg">
+>>>>>>> origin/HARINI
                 Extract clinical information from authorization packets,
                 evaluate medical necessity, predict appeal risk and route
                 complex cases to the right reviewer.
               </p>
+<<<<<<< HEAD
 
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <div className="chip border-rule bg-white text-ink-2">
@@ -79,6 +84,9 @@ export default function Landing() {
                 </div>
               </div>
             </div>
+=======
+          </div>
+>>>>>>> origin/HARINI
 
             <div className="mt-14 grid gap-5 lg:grid-cols-2">
               <PortalCard
@@ -116,6 +124,7 @@ export default function Landing() {
           </div>
         </section>
 
+<<<<<<< HEAD
         <section className="border-t border-rule bg-white">
           <div className="mx-auto grid max-w-[1440px] gap-6 px-6 py-10 sm:grid-cols-3 lg:px-10">
             <Feature
@@ -137,6 +146,9 @@ export default function Landing() {
             />
           </div>
         </section>
+=======
+
+>>>>>>> origin/HARINI
       </main>
     </div>
   );

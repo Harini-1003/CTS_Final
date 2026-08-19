@@ -17,6 +17,10 @@ Important:
 
 import re
 from pathlib import Path
+<<<<<<< HEAD
+=======
+from .hospital_parser import extract_hospital_pa
+>>>>>>> origin/HARINI
 
 from .vocab import (
     COMORBIDITIES,
@@ -1097,6 +1101,7 @@ def extract_fields(
 # PUBLIC API
 # ============================================================
 
+<<<<<<< HEAD
 def extract_from_file(
     path: str | Path,
 ) -> dict:
@@ -1108,6 +1113,83 @@ def extract_from_file(
     fields, unmatched, confidence = (
         extract_fields(text)
     )
+=======
+def extract_from_file(path: str | Path) -> dict:
+
+    text, pages = read_pdf(str(path))
+
+    normalized = text.lower()
+
+    # =========================================================
+    # HOSPITAL PA FORMAT DETECTION
+    # =========================================================
+
+    hospital_markers = [
+        "hospital / treating provider submission",
+        "hospital / facility",
+        "primary / provisional diagnosis",
+        "proposed treatment / procedure",
+        "hospitalization details",
+        "expected cost of hospitalization",
+        "supporting documents submitted",
+        "authorization requested for",
+    ]
+
+    hospital_hits = sum(
+        1
+        for marker in hospital_markers
+        if marker in normalized
+    )
+
+    if hospital_hits >= 4:
+
+        fields = extract_hospital_pa(text)
+
+        important = [
+            "patient_name",
+            "age",
+            "sex",
+            "diagnosis",
+            "diagnosis_code",
+            "clinical_complaint",
+            "clinical_findings",
+            "requested_treatment",
+            "procedure_code",
+            "treatment_type",
+            "hospital_facility",
+            "payer",
+            "supporting_documents_count",
+        ]
+
+        missing = [
+            key
+            for key in important
+            if fields.get(key) in (None, "")
+        ]
+
+        confidence = round(
+            (
+                len(important) - len(missing)
+            ) / len(important),
+            3
+        )
+
+        return {
+            "fields": fields,
+            "unmatched": missing,
+            "confidence": confidence,
+            "page_count": pages,
+            "char_count": len(text),
+            "raw_text": text[:20000],
+            "document_type": "HOSPITAL_PA",
+        }
+
+    # =========================================================
+    # EXISTING PA FORMAT
+    # =========================================================
+
+    fields, unmatched, confidence = extract_fields(text)
+>>>>>>> origin/HARINI
 
     return {
         "fields": fields,
@@ -1116,4 +1198,8 @@ def extract_from_file(
         "page_count": pages,
         "char_count": len(text),
         "raw_text": text[:20000],
+<<<<<<< HEAD
+=======
+        "document_type": "LEGACY_PA",
+>>>>>>> origin/HARINI
     }

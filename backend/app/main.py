@@ -11,9 +11,15 @@ sys.path.insert(
 
 from .config import CORS_ORIGINS  # noqa: E402
 from .database import Base, engine  # noqa: E402
+<<<<<<< HEAD
 from .routers import auth, dashboard, requests, review  # noqa: E402
 from .services import ml  # noqa: E402
 
+=======
+from .routers import auth, dashboard, requests, review # noqa: E402
+from .services import ml  # noqa: E402
+from .routers import chat
+>>>>>>> origin/HARINI
 app = FastAPI(
     title="Prior Authorization Intelligence Platform",
     description=(
@@ -40,6 +46,10 @@ app.include_router(auth.router)
 app.include_router(requests.router)
 app.include_router(review.router)
 app.include_router(dashboard.router)
+<<<<<<< HEAD
+=======
+app.include_router(chat.router)
+>>>>>>> origin/HARINI
 
 
 @app.on_event("startup")

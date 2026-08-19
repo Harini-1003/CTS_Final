@@ -21,6 +21,7 @@ from ..services.vocab import DIAGNOSIS_CODES
 router = APIRouter(prefix="/api", tags=["requests"])
 
 REQUIRED = [
+<<<<<<< HEAD
     "age", "sex", "bmi", "diagnosis", "disease_severity", "symptom_burden_0_10",
     "symptom_duration_months", "requested_treatment", "dose_category",
     "frequency", "route", "requested_duration_months", "request_reason",
@@ -31,6 +32,46 @@ REQUIRED = [
 ]
 
 
+=======
+    "patient_name",
+    "age",
+    "sex",
+    "diagnosis",
+    "diagnosis_code",
+    "clinical_complaint",
+    "clinical_findings",
+    "requested_treatment",
+    "procedure_code",
+    "treatment_type",
+    "hospital_facility",
+    "payer",
+    "supporting_documents_count",
+]
+LEGACY_REQUIRED = [
+    "age",
+    "sex",
+    "bmi",
+    "diagnosis",
+    "disease_severity",
+    "symptom_burden_0_10",
+    "symptom_duration_months",
+    "requested_treatment",
+    "dose_category",
+    "frequency",
+    "route",
+    "requested_duration_months",
+    "request_reason",
+    "previous_treatment_count",
+    "previous_failed_count",
+    "previous_partial_response_count",
+    "previous_adverse_effect_count",
+    "longest_previous_treatment_weeks",
+    "provider_specialty",
+    "provider_state",
+    "provider_type",
+    "payer",
+]
+>>>>>>> origin/HARINI
 @router.post("/documents/upload", status_code=201)
 def upload_document(
     file: UploadFile = File(...),

@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
+=======
+import Chatbot from "./Chatbot";
+>>>>>>> origin/HARINI
 import {
   Bell,
   ChevronDown,
@@ -193,8 +197,15 @@ export default function Layout({ portal, nav }) {
         <main className="min-w-0 flex-1">
           <div className="mx-auto max-w-[1500px] px-4 py-6 lg:px-8 lg:py-8">
             <div className="page-enter">
+<<<<<<< HEAD
               <Outlet />
             </div>
+=======
+               <Outlet />
+            </div>
+
+            <Chatbot portal={portal} />
+>>>>>>> origin/HARINI
           </div>
         </main>
       </div>
@@ -255,6 +266,7 @@ function Sidebar({
         })}
       </nav>
 
+<<<<<<< HEAD
       <div className="mt-auto rounded-xl border border-rule bg-white p-4">
         <div className="flex items-center gap-2">
           <div
@@ -275,6 +287,25 @@ function Sidebar({
           ML scoring and audit logging enabled.
         </p>
       </div>
+=======
+<div className="mt-auto rounded-xl border border-rule bg-white p-4">
+  <div className="flex items-center gap-2">
+    <div
+      className={`h-2 w-2 rounded-full ${
+        isPayer ? "bg-payer" : "bg-provider"
+      }`}
+    />
+
+    <span className="text-xs font-semibold">
+      Need help?
+    </span>
+  </div>
+
+  <p className="mt-2 text-[10px] leading-4 text-ink-3">
+    Upload your documents and we'll help you complete the request.
+  </p>
+</div>
+>>>>>>> origin/HARINI
     </div>
   );
 }
