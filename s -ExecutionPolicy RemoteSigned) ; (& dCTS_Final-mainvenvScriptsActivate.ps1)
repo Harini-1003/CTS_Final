@@ -1,0 +1,30 @@
+[33mcommit b54b0d28a6cbe9ccc0e80d67fb5504ac242b568d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 8d23354d cfedb24f
+Author: Pradeep Raj <bpradeepraj2005@gmail.com>
+Date:   Wed Aug 19 10:35:49 2026 +0530
+
+    Resolved merge conflicts from HARINI branch
+
+[33mcommit cfedb24f67ccec43e01059aa069f3a6e55d130e6[m[33m ([m[1;31morigin/HARINI[m[33m, [m[1;32mHARINI[m[33m)[m
+Author: Harini A <hariniaroumougam.gmail.com>
+Date:   Tue Aug 18 20:35:54 2026 +0530
+
+    Add Harini project
+
+[33mcommit 8d23354da2ceeacd14f38efd4f34a3028dae5b69[m
+Author: Pradeep Raj <bpradeepraj2005@gmail.com>
+Date:   Fri Aug 14 18:45:55 2026 +0530
+
+    fix: untrack venv and node_modules
+
+[33mcommit 1c8373c07a1b755f417b501a32d1794aec39c07a[m
+Author: Pradeep Raj <bpradeepraj2005@gmail.com>
+Date:   Fri Aug 14 18:40:05 2026 +0530
+
+    added gitignore file
+
+[33mcommit 1262f170dbb6513ae84d418eac3b0f64fd809d9c[m
+Author: Pradeep Raj <bpradeepraj2005@gmail.com>
+Date:   Fri Aug 14 16:58:54 2026 +0530
+
+    Pushed
